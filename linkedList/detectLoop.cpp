@@ -20,18 +20,31 @@ void addNode(Node** head, int data)                                     //functi
     *head = newNode; 
 }
 
-bool detectLoop(Node *head)                                             //function to detect a loop
-{                                                                       //return true if loop is found, else false
-    unordered_set<Node*> s;                                             //hold pointers to nodes in unordered way
-    while (head != NULL)
+bool detectLoop(Node *head)                                               //function to detect a loop
+{                                                                         //return true if loop is found, else false
+    Node *first = head, *second = head->next;
+    while (first != NULL && second != NULL && second->next != NULL)
     {
-        if (s.find(head) != s.end())
+        if (first == second)
             return true;
-        
-        s.insert(head);
-        head = head->next;
+        first = first->next;
+        second = first->next->next;
     }
     return false;
+}
+
+//alternative solution
+// {                                                                       
+//     unordered_set<Node*> s;                                          //store pointers to linked list in random fashion                                            
+//     while (head != NULL)
+//     {
+//         if (s.find(head) != s.end())
+//             return true;
+        
+//         s.insert(head);
+//         head = head->next;
+//     }
+//    return false;
 }
 //////////////////////////////////////////////////////////////////////
 
