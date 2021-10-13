@@ -1,7 +1,10 @@
 FINAL450.xlsx
+.gitignore
 kthMinMax.cpp
 sortingWithoutSorting.cpp
 negetiveNo.cpp
 medianOf_R_SortedMat.cpp
 rotation.cpp
 countNsay.cpp
+linkedList.cpp
+reverseLOT.cpp

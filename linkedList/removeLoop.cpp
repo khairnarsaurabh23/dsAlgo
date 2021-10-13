@@ -17,7 +17,7 @@ struct Node
 void detectNRemove(Node* head)
 {
     Node* current = head;
-    while (head->next != NULL)
+    while (current->next != NULL)
     {
         if (current->next->flag == 1)
         {
@@ -26,9 +26,11 @@ void detectNRemove(Node* head)
             cout<<endl<<"Loop Removed.";
             break;
         }
+
         current->flag = 1;
         current = current->next;
     }
+    cout<<endl<<"Linked does not has any node";
 }
 
 void addNode(Node **head, int data)
