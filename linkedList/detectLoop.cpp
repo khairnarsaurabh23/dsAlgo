@@ -45,7 +45,7 @@ bool detectLoop(Node *head)                                               //func
 //         head = head->next;
 //     }
 //    return false;
-}
+
 //////////////////////////////////////////////////////////////////////
 
 int main()
