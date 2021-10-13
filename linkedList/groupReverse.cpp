@@ -47,12 +47,12 @@ Node* reverse(Node* head, int groupSize)
 }
 //........................................................
 
-void addNode(Node* head, string str)
+void addNode(Node** head, string str)
 {
     Node* newNode = new Node;
     newNode->str = str;
-    newNode->next = head;
-    head = newNode;
+    newNode->next = *head;
+    *head = newNode;
 }
 //.......................................................
 
@@ -72,15 +72,15 @@ int main()
 {
     Node* head = NULL;
 
-    addNode(head, "a");
-    addNode(head, "b");
-    addNode(head, "c");
-    addNode(head, "d");
-    addNode(head, "e");
-    addNode(head, "f");
-    addNode(head, "g");
-    addNode(head, "h");
-    addNode(head, "i");
+    addNode(&head, "a");
+    addNode(&head, "b");
+    addNode(&head, "c");
+    addNode(&head, "d");
+    addNode(&head, "e");
+    addNode(&head, "f");
+    addNode(&head, "g");
+    addNode(&head, "h");
+    addNode(&head, "i");
 
     display(head);
 
