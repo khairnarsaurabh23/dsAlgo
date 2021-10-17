@@ -5,32 +5,32 @@
 using namespace std;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-struct Node {
+struct Node {                                                                   //skeleton for Nodes in BST
     int data;
     Node *left, *right;
 };
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-bool iSBST(Node* root)
+bool iSBST(Node* root)                                                          //function to check BST or not?
 {
     Node* current = root;
 
-    if (current->left == NULL || current->right == NULL)
+    if (current->left == NULL || current->right == NULL)                        //if only root node then true
         return true;
 
-    if (current->left->data >= current->data)
+    if (current->left->data >= current->data)                                   //condition for being BST
         return false;
-    if (current->right->data <= current->data)
+    if (current->right->data <= current->data)                                  //condition for being BST
         return false;
     
-    bool rightWing = iSBST(current->right);
-    bool leftWing = iSBST(current->left);
+    bool rightWing = iSBST(current->right);                                     //call recursively in right wing
+    bool leftWing = iSBST(current->left);                                       //call recursively in left wing
 
-    return (leftWing && rightWing);
+    return (leftWing && rightWing);                                             //if both follow rules then pass
 }
 
-Node* addNode(int data)
-{
+Node* addNode(int data)                             
+{                                                                               //function to add nodes in the tree
     Node* newNode = new Node;
     newNode->data = data;
     newNode->left = newNode->right = NULL;
