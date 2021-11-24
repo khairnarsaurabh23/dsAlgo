@@ -7,20 +7,20 @@ using namespace std;
 class Stack 
 {
     private:
-        int stk1, stk2;
-        int size;
+        int stk1, stk2;                                         //stk1 --> stack1  && stk2 --> stack2
+        int size;                                               //size of array = stk1 + stk2;
         int* ary;
 
     public:
         Stack(int num)
-        {
+        {                                                       //constructor fot initialization
             size = num;
             ary = new int[num];
             stk1 = -1;
             stk2 = size;
         }
 
-        void push1(int num)
+        void push1(int num)                                     //method to push an element in stack 1 
         {
             if (stk1 < stk2 - 1)
             {
@@ -36,7 +36,7 @@ class Stack
         }
 
         void push2(int num)
-        {
+        {                                                               //methos to push an element into Stack 2
             if (stk1 < stk2 - 1)
             {
                 stk2--;
@@ -50,7 +50,7 @@ class Stack
             }
         }
 
-        int pop1()
+        int pop1()                                                          //pop an element from stack 1
         {
             if (stk1 >= 0)
             {
@@ -64,7 +64,7 @@ class Stack
         }
 
         int pop2()
-        {
+        {                                                                   //pop an element from stack 2
             if (stk2 < size)
             {
                 int x =  ary[stk2];
@@ -77,8 +77,8 @@ class Stack
         }
 
         ~Stack()
-        {
-            delete[] ary;
+        {                                                                   //destructor
+            delete[] ary;                                                   //free up space allocated using new
         }
 };
 
@@ -88,7 +88,7 @@ int main()
 {
     Stack s(6);
 
-    s.push1(6);
+    s.push1(6);                                                             //push elements into stk1 and stk2
     s.push2(9);
     s.push1(1);
     s.push2(2);
@@ -97,8 +97,6 @@ int main()
 
     cout<<endl<<s.pop1()<<" poped from Stack 1.";
     cout<<endl<<s.pop2()<<" poped from Stack 1.";
-
-    //cout<<endl<<"error at: "<<*(0x4961EEB);
-
+    
     return 0;
 }
