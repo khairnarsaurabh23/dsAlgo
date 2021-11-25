@@ -20,7 +20,7 @@ class LinkedList
     public:
         LinkedList()                            //constructor
         {
-            first = NULL;                       //set no link
+            first = NULL;                       //points to nothing
         }
     //...........................................................
         Node*  find(int data)                                           //returns pointer to the node previous to required node
