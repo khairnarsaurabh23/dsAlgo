@@ -4,12 +4,12 @@
 using namespace std;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-struct Node {
+struct Node {                                               //Nodes of linked list
     int data;
     Node* next;
 };
 
-class Stack 
+class Stack                                                 //class to initiate and perform other operations on Linked List & Stack
 {
     private:
         Node* root;
@@ -20,7 +20,7 @@ class Stack
             root = NULL;
         }
 
-        void push(int data)
+        void push(int data)                                 //push data into stack
         {
             Node* newNode = new Node;
             newNode->data = data;
@@ -29,7 +29,7 @@ class Stack
             cout<<endl<<" "<<data<<" pushed into Stack";
         }
 
-        void pop()
+        void pop()                                              //function to pop an element from Stack
         {
             Node* temp = root;
             root = root->next;
@@ -37,12 +37,12 @@ class Stack
             free(temp);
         }
 
-        int  front()
+        int  front()                                            //getter function : get data at Top of Stack
         {
             return root->data;
         }
 
-        int rear()
+        int rear()                                              //getter function: get data at bottom of Stack
         {
             Node* current = root;
             while (current->next)
@@ -51,7 +51,7 @@ class Stack
             
         }
 
-        ~Stack()
+        ~Stack()                                                    
         {
             delete root;
         }
@@ -61,14 +61,14 @@ class Stack
 
 int main()
 {
-    Stack s;
+    Stack s;                                                    //initiate Linked list 
 
-    s.push(66);
+    s.push(66);                                                 //push elements into linked list
     s.push(45);
     s.push(83);
     s.push(89);
 
-    s.pop();
+    s.pop();                                                    //pop an element from Stack
 
     cout<<endl<<"Front: "<<s.front();
     cout<<endl<<"Last: "<<s.rear();
